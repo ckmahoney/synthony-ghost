@@ -1,0 +1,62 @@
+{{!< default}}
+
+{{#match @custom.publication_cover_style "!=" "None"}}
+    <div class="site-header-content{{#match @custom.publication_cover_style "Large"}} large{{/match}}">
+        {{#if @site.cover_image}}
+            {{!-- This is a responsive image, it loads different sizes depending on device
+            https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
+            <img class="site-header-cover"
+                srcset="{{img_url @site.cover_image size="s"}} 300w,
+                        {{img_url @site.cover_image size="m"}} 600w,
+                        {{img_url @site.cover_image size="l"}} 1000w,
+                        {{img_url @site.cover_image size="xl"}} 2000w"
+                sizes="100vw"
+                src="{{img_url @site.cover_image size="xl"}}"
+                alt=""
+            />
+        {{/if}}
+    </div>
+{{/match}}
+
+<main id="site-main" class="site-main outer">
+    <section class="motive-emotive">
+
+    </section>
+
+    <section class="mini-song-maker">
+      <div id="mini-song-maker"></div>
+      <div id="mini-player"></div>
+    </section>
+
+    <section class="motive-compelling">
+      <p>Be a pioneer.</p>
+      <p>Join the early makers who write songs not with guitars or DAWs, but by design.</p>
+      <p>Right now, your voice matters. We are so young that every voice will be heard. We want you to want us to make the best music for you.</p>
+                {{#unless @member}}
+                    <a class="gh-head-button" href="#/portal/signup" data-portal="signup">Join</a>
+                {{else}}
+                    <a class="gh-head-button" href="#/portal/account" data-portal="account">Account</a>
+                {{/unless}}
+    </section>
+
+    <section class="motive-manifesto">
+      <div>
+        <p class="emphasize">Mozart wrote amazing symponies.</p>
+        <p class="emphasize"> Elvis Presly shook his hips.</p>
+        <p class="emphasize">The 80s.</p>
+        <p class="emphasize">2Pac told stories like never before.</p>
+        <p class="emphasize">Beyoncé slays, Lady Gaga is cray.</p>
+        <p>Adele, Cardi B., Drake, Ed Sheeran, Kanye, Lil Nas X, Post Malone, The Weeknd...</p>
+        <p>They are all great now. But only for a while, until the next best song.</p>
+
+        <p class="epmhasize">Synthony is the meta music.</p>
+        <p>Get in now and be a pioneer. We can only do it with your help.</p>
+                {{#unless @member}}
+                    <a class="gh-head-button" href="#/portal/signup" data-portal="signup">Join</a>
+                {{else}}
+                    <a class="gh-head-button" href="#/portal/account" data-portal="account">Account</a>
+                {{/unless}}
+      </div>
+    </section>
+
+</main>

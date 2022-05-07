@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="{{@site.locale}}"{{#match @custom.color_scheme "Dark"}} class="dark-mode"{{/match}}{{#match @custom.color_scheme "Auto"}} class="auto-color"{{/match}}>
+<head>
+
+    <title>Contact Synthony</title>
+    <meta name="description" content="Get in touch. Tell us about what you did with your music, or let us know about something you want to hear." />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
+    <meta property="og:site_name" content="Synthony" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Contact" />
+    <meta property="og:description" content="Get in touch. Tell us about what you did with your music, or let us know about something you want to hear." />
+    <meta property="og:url" content="https://synthony.app/contact/" />
+    <meta property="og:image" content={{asset "img/page-contact-cover.png"}} />
+    <meta property="article:published_time" content="2022-01-28T20:09:49.000Z" />
+    <meta property="article:modified_time" content="2022-02-16T21:24:14.000Z" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Contact" />
+    <meta name="twitter:description" content="Get in touch. Tell us about what you did with your music, or let us know about something you want to hear." />
+
+    <meta name="twitter:url" content="https://synthony.app/contact/" />
+    <meta name="twitter:image" content={{asset "img/page-contact-cover.png"}} />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Cortland Mahoney" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="675" />
+
+
+    <style>
+        :root {
+            {{#if @custom.header_button_background}}
+            --button-bg-color: {{@custom.header_button_background}};
+            {{/if}}
+            --button-text-color: {{#match @custom.header_button_text_color "Light"}}#fff{{else}}var(--color-darkgrey){{/match}};
+        }
+         .social-icon { margin: auto; }
+          @media(max-width: 768px) {
+            .social-icon  { max-width: 75px; }
+          }
+
+          @media(min-width: 768px) {
+            .social-icon { max-width: 150px; }
+          }
+
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "song-designer/syn-bulma.min.css"}}" />
+
+    {{ghost_head}}
+</head>
+
+<body class="{{body_class}}{{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}{{#match @custom.body_font "=" "Modern sans-serif"}} has-sans-body{{/match}}">
+<div class="viewport">
+
+    <header id="gh-head" class="gh-head{{#match @custom.publication_cover_style "!=" "None"}} has-cover{{/match}}">
+        <nav class="gh-head-inner inner gh-container">
+
+            <div class="gh-head-brand">
+                <a class="gh-head-logo" href="{{@site.url}}">
+                    {{#if @site.logo}}
+                        <img src="{{@site.logo}}" alt="{{@site.title}}" />
+                    {{else}}
+                        {{@site.title}}
+                    {{/if}}
+                </a>
+                <a class="gh-burger" role="button">
+                    <div class="gh-burger-box">
+                        <div class="gh-burger-inner"></div>
+                    </div>
+                </a>
+            </div>
+            <div class="gh-head-menu">
+                {{navigation}}
+            </div>
+            <div class="gh-head-actions">
+                <div class="gh-social">
+                    {{#if @site.facebook}}
+                        <a class="gh-social-facebook" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
+                    {{/if}}
+                    {{#if @site.twitter}}
+                        <a class="gh-social-twitter" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
+                    {{/if}}
+                </div>
+
+                {{#unless @member}}
+                    <a class="gh-head-button" href="#/portal/signup" data-portal="signup">Join</a>
+                {{else}}
+                    <a class="gh-head-button" href="#/portal/account" data-portal="account">Account</a>
+                {{/unless}}
+            </div>
+        </nav>
+    </header>
+
+    <article class="article post no-image ">
+
+        <header class="article-header gh-canvas">    
+          <h1 class="article-title">Get in Touch</h1>
+          <p class="article-excerpt">tell us about it!</p>
+          <!-- <figure class="article-image"> -->
+            <!-- <img src={{asset "img/page-contact-cover.png"}} alt="Showing a microphone to encourage your message"> -->
+          <!-- </figure> -->
+        </header>
+
+        <section class="gh-content gh-canvas pt-0 section content">
+          <p>Tell us all about it - the good, the bad, and the funly. <b>Especially</b>  what you did with your Synthony Songs!</p>
+          <p>All musical matters on you mind - like questions about licensing, features you would like to see in Synthony, or special partnerships/collaborations - are interesting to us. </p>
+          <p>We are active on all the major social channels so feel free to drop a line anywhere you recognize us.</p>
+        <div class="wb with-bulma">      
+          <ul class="columns is-mobile">
+            <li class="column social-icon m-auto"><a href="https://www.tiktok.com/@synthonysound" target="_blank"><img alt="go to SynthonySound on TikTok" src="{{asset "svg/tiktok.svg"}}"></a></li>
+            <li class="column social-icon m-auto"><a href="https://instagram.com/SynthonySound" target="_blank"><img alt="go to SynthySound on Instagram" src="{{asset "svg/instagram.svg"}}"></a></li>
+            <li class="column social-icon m-auto"><a href="https://twitter.com/SynthonySound" target="_blank"><img alt="go to SynthonySound on Twitter" src="{{asset "svg/twitter.svg"}}"/></a></li>
+            <li class="column social-icon m-auto"><a href="https://www.facebook.com/SynthonySound" target="_blank"><img alt="go to SynthonySound on Facebook" src="{{asset "svg/facebook.svg"}}"/></a></li>
+          </ul>
+        </div>
+        <br/>
+          <p>Or go classic and put it right here.</p>
+
+        <div class="wb with-bulma">      
+        <div id="form">
+          {{#if @member}}
+
+           <fieldset disabled>
+            <div class="field">
+              <label class="label">Name</label>
+              <div class="control  has-icons-left has-icons-right">
+                <input disabled id="user-name" class="input " value="{{@member.name}}" type="text">
+              </div>
+            </div>
+
+
+            <div class="field">
+              <label class="label">Email</label>
+              <div class="control has-icons-left has-icons-right">
+                <input disabled id="email" class="input" type="email" placeholder="you@mail.com" value="{{@member.email}}">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-envelope"></i>
+                </span>
+
+              </div>
+            </div>
+
+           </fieldset>
+
+          {{else}}
+
+            <div class="field">
+              <label class="label">Name</label>
+              <div class="control has-icons-left has-icons-right">
+                <input id="their-name" class="input" type="text" placeholder="Your Name">
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Email</label>
+              <div class="control has-icons-left has-icons-right">
+                <input id="email"  class="input" type="email" placeholder="you@mail.com" value="">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-envelope"></i>
+                </span>
+                <span class="icon is-small is-right">
+                  <i class="fas fa-exclamation-triangle"></i>
+                </span>
+              </div>
+            </div>
+
+          {{/if}}
+
+          <div class="field">
+            <label class="label">Subject</label>
+            <div class="control  has-icons-left has-icons-right">
+              {{#if @member}}
+                <input id="subject" class="input" value="Message from {{@member.name}}" type="text" />
+              {{else}}
+                <input id="subject" class="input" value="A note for Cortland" type="text" />
+              {{/if}}
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Message</label>
+            <div class="control">
+              <textarea id="message" class="textarea" placeholder="Tell us about it"></textarea>
+            </div>
+          </div>
+
+          <div class="field is-grouped">
+            <div class="control">
+              <div id="error-box"></div>
+              <button id="send" class="button is-link">Send</button>
+            </div>
+          </div>
+        </div>
+       </div>
+      </section>
+    </article>
+
+
+    <footer class="site-footer outer">
+        <div class="inner">
+            <section class="copyright"><a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}</section>
+            <nav class="site-footer-nav">
+                {{navigation type="secondary"}}
+            </nav>
+
+        </div>
+    </footer>
+
+</div>
+{{!-- /.viewport --}}
+
+
+<script type="text/javascript">
+  {{#if @member}}
+    const member = {};
+    member.uuid = "{{@member.uuid}}";
+    member.email = "{{@member.email}}";
+    member.name = "{{@member.name}}";
+
+  {{else}}
+    const member = false;
+  {{/if}}
+
+  /* send the UUID when the member is known, otherwise use the anon UUID and their given name.  */
+  function getName() {
+    if (member) {
+       
+       return member.uuid;
+    } else {
+      return null;
+    }
+  }
+
+  /* Use the given subject when member exists, else append "their name" to the subject line since we have no other record of it. */
+  function getSubject() {
+    if (member) {
+      return $("#subject").val()
+    } else {
+      return $("#subject").val() + " from " + $("#their-name").val();
+    }
+  }
+
+
+  function getMessage() {
+    return $("#message").val();
+  }
+
+
+  function getEmail() {
+    return $("#email").val() || (member && member.email) || null;
+  }
+
+
+  function body() {
+    return (
+      { action : "message"
+      , username : getName()
+      , subject : getSubject()
+      , message : getMessage()
+      , email : getEmail()
+      })
+  }
+
+  function sendMessage(username, subject, mesage, email) {
+    return new Promise((resolve, reject) => {
+      $("#form").fadeToggle(resolve);
+
+    }).then(_ => 
+      fetch("https://synthony.app/user", 
+      { method: "POST"
+      , body: JSON.stringify(body())
+      }))
+    .then(r => r.json())
+
+  }
+
+  function responseMessage(msg) {
+    const html = "<div class='with-bulma wb'><p class='content'>" + msg + "</p></div>";
+    return html 
+  }
+
+  function successMessage(content) {
+    const html = "<div class='box has-text-light has-background-info'>" + content + "</div>"
+    return html;
+  }
+
+
+  function mailTo() {
+    return '<div class="has-text-centered"><a href="mailto:support@synthony.app">support@synthony.app</a></div>';
+  }
+
+
+   function testSendMessage() {
+    return sendMessage("f6bc137f-218b-42c7-8a6f-ae445103d96c", "testing from frontend", "this is a great message", "anon@synthony.app")
+    .then(result => {
+        if (result.success) {
+          $("#form").html(responseMessage( successMessage( result.success) ) ).fadeToggle();
+        } else {
+          $("#form").html(responseMessage( result.error || "Weird, something went very haywire. You can reach us directly at this address: " + mailTo() )  ).fadeToggle();
+        }
+    });
+  }
+
+  function showError(content) {
+    const html = "<p class='is-size-3 my-3 has-text-danger'>" + content + "</p>";
+    $("#error-box").fadeOut().html(html).fadeIn();
+  }
+
+  function validateForm() {
+    const email = getEmail();
+    const name = getName();
+    const subject = getSubject();
+    const message = getMessage();
+
+    if (!name && null != name) { // use null to represent the "anon" uuid
+      return showError("We need something to call you - please give us a name.");      
+    }    
+
+    if (!email) {
+      return showError("Communication is a two way road. Please give us an email address to reply to.");
+    }
+
+    if (!message) {
+      return  showError("Going through all this work for nothing? Put something in the message box!")
+    }
+    return true;
+  }
+
+  /* Checks the form details before sending; if valid makes the request. */
+  function reqSend() {
+    if ( !validateForm() ) return;
+
+    const email = getEmail();
+    const name = getName();
+    const subject = getSubject();
+    const message = getMessage();
+
+    sendMessage(name, subject, message, email)
+    .then(result => {
+        if (result.success) {
+          $("#form").html(responseMessage( successMessage( result.success) ) ).fadeToggle();
+        } else {
+          $("#form").html(responseMessage( result.error || "Weird, something went very haywire and that might not have been delivered. You can reach us directly at this address: " + mailTo() )  ).fadeToggle();
+        }
+    })
+    .catch(err => {
+            $("#form").html(responseMessage( "Well that was unexpected, we hit a bump and could not send your message. You can reach us directly at this address: " + mailTo() )  ).fadeToggle();
+    });
+  }
+
+  
+ 
+ 
+</script>
+
+<script
+    src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous">
+</script>
+<script src="{{asset "built/casper.js"}}"></script>
+<script src="{{asset "built/syn-index.min.js"}}"></script>
+
+
+<script>
+$(document).ready(function () {
+    // Mobile Menu Trigger
+    $('.gh-burger').click(function () {
+        $('body').toggleClass('gh-head-open');
+    });
+    // FitVids - Makes video embeds responsive
+    $(".gh-content").fitVids();
+    $("#send").on("click", reqSend)
+});
+</script>
+
+{{ghost_foot}}
+
+</body>
+</html>
